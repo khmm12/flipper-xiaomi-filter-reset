@@ -12,7 +12,7 @@ App(
     fap_version="1.0",
     fap_description="Reset the filter-life counter on Xiaomi air purifier NFC filter tags.",
     fap_author="Maxim Khvatalin",
-    fap_weburl="https://github.com/khmm12/flipper-xiaomi-drm-free",
+    fap_weburl="https://github.com/khmm12/flipper-xiaomi-filter-reset",
     sources=[
         "xiaomi_filter_reset.c",
         "scenes/*.c",

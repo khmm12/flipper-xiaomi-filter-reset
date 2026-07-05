@@ -21,5 +21,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Actions CI: FAP build (dev + release channels), host tests, format/lint.
 - Flipper App Catalog submission manifest under `catalog/`.
 
-[Unreleased]: https://github.com/khmm12/flipper-xiaomi-drm-free/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/khmm12/flipper-xiaomi-drm-free/releases/tag/v1.0.0
+[Unreleased]: https://github.com/khmm12/flipper-xiaomi-filter-reset/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/khmm12/flipper-xiaomi-filter-reset/releases/tag/v1.0.0

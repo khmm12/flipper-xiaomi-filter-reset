@@ -12,7 +12,7 @@
 sourcecode:
   type: git
   location:
-    origin: https://github.com/khmm12/flipper-xiaomi-drm-free.git
+    origin: https://github.com/khmm12/flipper-xiaomi-filter-reset.git
     commit_sha: REPLACE_WITH_RELEASE_COMMIT_SHA
 
 name: Xiaomi Filter Reset
@@ -28,3 +28,5 @@ changelog: "@catalog/changelog.md"
 
 screenshots:
   - catalog/screenshots/screenshot_1.png
+  - catalog/screenshots/screenshot_2.png
+  - catalog/screenshots/screenshot_3.png

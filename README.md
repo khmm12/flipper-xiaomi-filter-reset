@@ -4,7 +4,7 @@ A [Flipper Zero](https://flipperzero.one/) app that resets the **filter-life cou
 on Xiaomi air purifier filters, so the appliance reports **100%** again — no filter
 swap and no smartphone app required.
 
-[![CI](https://github.com/khmm12/flipper-xiaomi-drm-free/actions/workflows/ci.yml/badge.svg)](https://github.com/khmm12/flipper-xiaomi-drm-free/actions/workflows/ci.yml)
+[![CI](https://github.com/khmm12/flipper-xiaomi-filter-reset/actions/workflows/ci.yml/badge.svg)](https://github.com/khmm12/flipper-xiaomi-filter-reset/actions/workflows/ci.yml)
 [![License: GPL-3.0-or-later](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
 [![Flipper category: NFC](https://img.shields.io/badge/Flipper-NFC-orange.svg)](https://flipperzero.one/)
 
@@ -20,6 +20,7 @@ swap and no smartphone app required.
 - [Disclaimer](#disclaimer)
 - [Compatibility](#compatibility)
 - [How it works](#how-it-works)
+- [Screenshots](#screenshots)
 - [Install](#install)
 - [Usage](#usage)
 - [Build from source](#build-from-source)
@@ -44,9 +45,9 @@ No warranty. See the [License](#license).
 The app works with Xiaomi air purifier filters whose tag is an **NTAG213**
 (ISO 14443-3A / NfcA) using the vendor's UID-derived password scheme. This covers the
 filters shipped with many Mi Air Purifier models (community reports include the
-3H/3C, 4/4 Lite/4 Pro, and Pro/Pro H lines). Two distinct filter families were
-verified during development, identified by their on-tag product code (`AP11` and
-`JDA0`).
+3H/3C, 4/4 Lite/4 Pro, and Pro/Pro H lines). Several distinct filter families have
+been verified on real hardware, identified by their on-tag product code (`AP11`,
+`JDA0`, and `JD26`).
 
 Because the app authenticates using a password **derived from each tag's own UID**, a
 successful reset is itself proof the tag is a supported Xiaomi filter. Foreign tags
@@ -68,6 +69,12 @@ simply fail authentication and are never written to.
 The full reverse-engineering write-up, memory map, and the exact password algorithm
 are in [`docs/protocol.md`](./docs/protocol.md).
 
+## Screenshots
+
+| Menu | Waiting for the tag | Done |
+| :---: | :---: | :---: |
+| ![Start menu](catalog/screenshots/screenshot_1.png) | ![Hold the filter tag to the back](catalog/screenshots/screenshot_2.png) | ![Filter life restored to 100%](catalog/screenshots/screenshot_3.png) |
+
 ## Install
 
 ### Option A — Flipper App Catalog (recommended once published)
@@ -78,8 +85,8 @@ Search for **"Xiaomi Filter Reset"** in the Apps catalog inside
 ### Option B — Prebuilt `.fap`
 
 1. Download `xiaomi_filter_reset.fap` from the
-   [latest release](https://github.com/khmm12/flipper-xiaomi-drm-free/releases) or
-   from the [CI artifacts](https://github.com/khmm12/flipper-xiaomi-drm-free/actions).
+   [latest release](https://github.com/khmm12/flipper-xiaomi-filter-reset/releases) or
+   from the [CI artifacts](https://github.com/khmm12/flipper-xiaomi-filter-reset/actions).
 2. Copy it to your Flipper's SD card under `apps/NFC/`.
 3. Launch it from **Apps → NFC → Xiaomi Filter Reset**.
 
