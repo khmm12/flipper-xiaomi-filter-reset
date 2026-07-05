@@ -21,14 +21,19 @@ void xiaomi_filter_reset_scene_success_on_enter(void* context) {
 
     char product[XIAOMI_FILTER_PRODUCT_CODE_SIZE];
     xiaomi_filter_worker_get_product_code(app->worker, product);
+    // A zero counter means the tag was already fresh; say so instead of implying we
+    // undid wear that wasn't there.
+    const bool was_fresh = xiaomi_filter_worker_get_old_counter(app->worker) == 0;
+
     snprintf(
         xiaomi_filter_reset_success_text,
         sizeof(xiaomi_filter_reset_success_text),
-        "Filter \"%s\"\nlife restored to 100%%",
+        was_fresh ? "Filter \"%s\"\nwas already at 100%%" :
+                    "Filter \"%s\"\nlife restored to 100%%",
         product);
 
     popup_reset(popup);
-    popup_set_header(popup, "Done!", 64, 10, AlignCenter, AlignTop);
+    popup_set_header(popup, was_fresh ? "Already fresh" : "Done!", 64, 10, AlignCenter, AlignTop);
     popup_set_text(popup, xiaomi_filter_reset_success_text, 64, 30, AlignCenter, AlignTop);
     popup_set_context(popup, app);
     popup_set_callback(popup, xiaomi_filter_reset_scene_success_popup_callback);
